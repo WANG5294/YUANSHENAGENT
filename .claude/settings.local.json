@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftotext /home/vboxuser/YUANSHENJIANMO/2025A.pdf -)",
+      "Bash(pdfinfo /home/vboxuser/YUANSHENJIANMO/2025A.pdf)"
+    ]
+  }
+}
