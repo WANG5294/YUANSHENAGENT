@@ -1,0 +1,22 @@
+手动搭建Agent
+
+1.总体架构
+system+user prompt —— 大模型 —— 输出tool-use=1+用的什么tool+给tool输入的信息——tool干活——tool的输出加到user prompt——循环——纯文本输出
+
+2.调用API
+DeepSeek-V4-pro+能识别麦克风输入的蜂鸣器声音的API
+
+3.system prompt
+身份+环境+任务+skill+tool
+身份+环境+任务：你是顶级单片机程序设计大师，你是24.04ubuntu虚拟机里的agent，你需要根据用户的需求编写python程序，烧录python程序，检测python程序运行，确保程序最终完美运行，请一步步思考
+skill：esp32接口说明文档+蜂鸣器限制说明文档
+tool：bash，read，write，edit，python3，micropython，本地MCP文件+云端MCP文件
+
+4.大模型输出内容
+tool-use=1，调用tool的名称，给tool的满足tool输入格式的信息要这个tool输出报错日志/运行程序/烧录等等
+
+5.检测运行效果
+用micropython-tool在单片机运行程序时，常规的claudecode，codex等程序无法获取蜂鸣器发出的声音，需要人为输入声音效果
+通过电脑/外接麦克风，获取蜂鸣器发出声音的音频，子代理使用某一种神奇的API把这个音频转成ASCII给主agent（这里需要同时执行两个子代理，MCP的micropython和音频子代理）给agent装上了耳朵
+
+6.安全限制，禁止的操作，ToDolist
