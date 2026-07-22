@@ -1,0 +1,25 @@
+{
+  "name": "yuanshen-esp32-agent",
+  "version": "3.0.0",
+  "description": "Yuanshen v3 —— ESP32 单片机开发 Agent：一句话目标 → 自动编写/烧录/实机测试 MicroPython，含 MCP 设备通道与麦克风闭环验证",
+  "bin": {
+    "Yuanshen": "bin/Yuanshen.js"
+  },
+  "files": [
+    "bin/",
+    "Yuanshen_v3.py",
+    "esp32_piano_mcp.py",
+    "requirements.txt",
+    "skills/",
+    ".env.example",
+    "readme_v3.md",
+    "请用户先阅读.md",
+    "README.md"
+  ],
+  "os": ["linux", "darwin"],
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": ["esp32", "micropython", "agent", "mcp", "embedded"],
+  "license": "MIT"
+}
